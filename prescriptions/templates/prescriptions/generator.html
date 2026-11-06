@@ -127,7 +127,9 @@
                     {{ item.instructions.label_tag }}
                     {{ item.instructions }}
 
-                    {{ item.DELETE }}
+                    <div class="delete-field" style="display: none;">
+                        {{ item.DELETE }}
+                    </div>
 
                     <div class="errors">
                         {{ item.errors }}
@@ -182,7 +184,9 @@
             {{ formset.empty_form.instructions.label_tag }}
             {{ formset.empty_form.instructions }}
 
-            {{ formset.empty_form.DELETE }}
+            <div class="delete-field" style="display: none;">
+                {{ formset.empty_form.DELETE }}
+            </div>
 
             <button type="button" class="remove-btn">
                 Удалить препарат
@@ -269,9 +273,7 @@
 
                 timeout = setTimeout(async () => {
                     try {
-                        const response = await fetch(
-                            `/search/?q=${encodeURIComponent(query)}`
-                        );
+                        const response = await fetch(`/drugs/search/?q=${encodeURIComponent(query)}`);
 
                         if (!response.ok) {
                             throw new Error("Search failed");
