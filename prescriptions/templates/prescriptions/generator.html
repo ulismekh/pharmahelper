@@ -185,7 +185,9 @@
             {{ formset.empty_form.instructions }}
 
             <div class="delete-field" style="display: none;">
-                {{ formset.empty_form.DELETE }}
+                <div style="display: none;">
+                    {{ formset.empty_form.DELETE }}
+                </div>
             </div>
 
             <button type="button" class="remove-btn">
