@@ -61,7 +61,7 @@ class DrugDosage(models.Model):
     )
 
     def __str__(self):
-        return f"{self.drug.name} — {self.dosage_form} {self.strength}"
+        return f"{self.drug.name} — {self.dosage_form}"
 
     class Meta:
         verbose_name = "Дозировка препарата"
